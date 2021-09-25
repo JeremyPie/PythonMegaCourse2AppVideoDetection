@@ -2,3 +2,5 @@ pandas
 numpy
 opencv-python
 bokeh
+openpyxl
+xlrd
