@@ -1,8 +1,11 @@
 import cv2
+import pandas as pd
+
 from datetime import time
 
 video = cv2.VideoCapture(0, cv2.CAP_DSHOW)
 first_frame = None
+df = pd.DataFrame(columns = ['Start', 'End'])
 
 status_list = []
 times = [0, 0]
@@ -42,5 +45,9 @@ while True:
             times.append(datetime.now())
         break
 
+for i in range(0, len(status_list), 2):
+    df = df.append({'Start':times[i], 'End':times[i+1]})
+df.to_csv('Times.csv')                              
+                              
 video.release()
 cv2.destroyAllWindows()
