@@ -1,6 +1,6 @@
-pandas
 numpy
 opencv-python
+pandas
 bokeh
 openpyxl
 xlrd
